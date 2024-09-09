@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">  </input>
+    <button onclick="addTodo()"> Add Task </button>
+    <button onclick="delfirstTodo()"> Delete First Task</button>
+    <button onclick="dellastTodo()"> Delete Last Task</button>
+    <div id = "allTODO"></div>
+    <script>
+
+        let todos=[];
+
+        function addTodo() {
+            todos.push({
+                title: document.querySelector("input").value
+                
+            })
+            render();
+        }
+
+        function delfirstTodo() {
+            todos.splice(0,1);
+            render();
+        }
+
+        function dellastTodo() {
+            todos.splice(todos.length -1 , 1)
+
+            render();
+        }
+
+        function delSpectodo(index) {
+            todos.splice(index, 1);
+            render();
+        }
+
+        function render() { 
+            document.querySelector("#allTODO").innerHTML = "";
+            for(let i = 0; i <todos.length ; i ++) {
+                const todo = todos[i];
+                const spanEl = document.createElement("span");
+                const butEl = document.createElement("button");
+
+                spanEl.innerHTML = todo.title;
+                butEl.innerHTML = "Delete";
+                
+                const divEl = document.createElement("div");
+                divEl.appendChild(spanEl)
+                divEl.appendChild(butEl)
+
+                document.querySelector("#allTODO").appendChild(divEl)
+            }
+        }
+
+    </script>
+</body>
+</html>

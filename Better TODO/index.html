@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()"> Add Task </button>
+
+    <script>
+
+        function addTodo() {
+            const valueEl = document.querySelector("input").value;
+            const spanEl = document.createElement("span");
+            const butEl = document.createElement("button");
+            spanEl.innerHTML = valueEl;
+            butEl.innerHTML = "Delete Task";
+
+            const DivEl = document.createElement("div");
+            DivEl.appendChild(spanEl);
+            DivEl.appendChild(butEl);
+
+            document.querySelector("body").appendChild(DivEl);
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dynamic.css">
+
+</head>
+
+<body>
+    <h1>TO DO LIST</h1>
+    <div>
+        <div id="t1">
+            <h3>1. Take a bath</h3>
+            <button onclick="delToDo(1)"> delete </button>
+        </div>
+        <div id="t2">
+            <h3>2. Go to gym</h3>
+            <button onclick="delToDo(2)"> delete </button>
+        </div>
+        <div id="t3">
+            <h3>3. Study</h3>
+            <button onclick="delToDo(3)"> delete </button>
+        </div>
+        <div id="t4">
+            <h3>4. Sleep</h3>
+            <button onclick="delToDo(4)"> delete </button>
+        </div>
+    </div>
+    <input type="text"></input>
+    <button onclick="addToDo()">Add to DO</button>
+    <!-- <script src="dynamic.js"></script> -->
+    <script>
+        let divele = document.createElement("div");
+        divele.innerHTML = "this is a new to do";
+        document.querySelector("body").appendChild(divele);
+    </script>
+
+</body>
+
+</html>
